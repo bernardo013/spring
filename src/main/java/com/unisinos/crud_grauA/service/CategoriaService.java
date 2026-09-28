@@ -27,6 +27,11 @@ public class CategoriaService {
                 .toList();
     }
 
+    @Transactional(readOnly = true)
+    public CategoriaResponseDTO buscarPorId(Long id) {
+        return CategoriaResponseDTO.fromEntity(buscarEntidade(id));
+    }
+
     @Transactional
     public CategoriaResponseDTO criar(CategoriaRequestDTO dto) {
         if (categoriaRepository.existsByNome(dto.nome())) {

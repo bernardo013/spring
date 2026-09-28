@@ -30,6 +30,11 @@ public class TransportadoraService {
                 .toList();
     }
 
+    @Transactional(readOnly = true)
+    public TransportadoraResponseDTO buscarPorId(Long id) {
+        return TransportadoraResponseDTO.fromEntity(buscarEntidade(id));
+    }
+
     @Transactional
     public TransportadoraResponseDTO criar(TransportadoraRequestDTO dto) {
         if (transportadoraRepository.existsByCnpj(dto.cnpj())) {

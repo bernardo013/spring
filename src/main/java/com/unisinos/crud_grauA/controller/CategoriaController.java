@@ -23,6 +23,11 @@ public class CategoriaController {
         return ResponseEntity.ok(categoriaService.listar());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<CategoriaResponseDTO> buscarPorId(@PathVariable Long id) {
+        return ResponseEntity.ok(categoriaService.buscarPorId(id));
+    }
+
     @PostMapping
     public ResponseEntity<CategoriaResponseDTO> criar(@Valid @RequestBody CategoriaRequestDTO dto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(categoriaService.criar(dto));

@@ -23,6 +23,11 @@ public class TransportadoraController {
         return ResponseEntity.ok(transportadoraService.listar());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<TransportadoraResponseDTO> buscarPorId(@PathVariable Long id) {
+        return ResponseEntity.ok(transportadoraService.buscarPorId(id));
+    }
+
     @PostMapping
     public ResponseEntity<TransportadoraResponseDTO> criar(@Valid @RequestBody TransportadoraRequestDTO dto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(transportadoraService.criar(dto));

@@ -30,6 +30,12 @@ public class ContatoService {
                 .toList();
     }
 
+    @Transactional(readOnly = true)
+    public ContatoResponseDTO buscarPorId(Long transportadoraId, Long id) {
+        buscarTransportadoraAtiva(transportadoraId);
+        return ContatoResponseDTO.fromEntity(buscarEntidade(id, transportadoraId));
+    }
+
     @Transactional
     public ContatoResponseDTO criar(Long transportadoraId, ContatoRequestDTO dto) {
         Transportadora transportadora = buscarTransportadoraAtiva(transportadoraId);

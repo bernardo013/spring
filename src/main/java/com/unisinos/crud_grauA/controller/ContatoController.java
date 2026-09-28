@@ -23,6 +23,11 @@ public class ContatoController {
         return ResponseEntity.ok(contatoService.listar(transportadoraId));
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<ContatoResponseDTO> buscarPorId(@PathVariable Long transportadoraId, @PathVariable Long id) {
+        return ResponseEntity.ok(contatoService.buscarPorId(transportadoraId, id));
+    }
+
     @PostMapping
     public ResponseEntity<ContatoResponseDTO> criar(@PathVariable Long transportadoraId, @Valid @RequestBody ContatoRequestDTO dto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(contatoService.criar(transportadoraId, dto));
