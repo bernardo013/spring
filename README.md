@@ -42,4 +42,4 @@ A aplicação sobe em `http://localhost:8080`. Na primeira execução o banco j�
 - `/transportadoras`
 - `/transportadoras/{transportadoraId}/contatos`
 
-Documentação da API -> [![Postman](https://img.shields.io/badge/Postman-Collection-orange)]([https://www.postman.com/bernardo013-9220741/test-php/collection/djp2meg/test-php-req](https://www.postman.com/bernardo013-9220741/workspace/grau-a-api-tms/collection/55174951-d39f0e23-c58c-4f51-a908-d27d5ea5a7e2?action=share&source=copy-link&creator=55174951))
+Documentação da API -> [![Postman](https://img.shields.io/badge/Postman-Collection-orange)](https://www.postman.com/bernardo013-9220741/workspace/grau-a-api-tms/collection/55174951-d39f0e23-c58c-4f51-a908-d27d5ea5a7e2?action=share&source=copy-link&creator=55174951)
